@@ -6,5 +6,10 @@ def home(request):
     return HttpResponse("Hello Manikanta!, How are you?.")
 
 def succesPage(request):
-    return render(request, 'index.html')
+    people = [
+    {"name": "Alice", "age": 25, "city": "New York"},
+    {"name": "Bob", "age": 30, "city": "London"},
+    {"name": "Charlie", "age": 28, "city": "Paris"}
+]
+    return render(request, 'index.html', context={'people': people})
 

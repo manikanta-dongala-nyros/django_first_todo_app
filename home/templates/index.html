@@ -7,7 +7,16 @@
   </head>
   <body>
     <h1>Successfully Completed!</h1>
-    <p>Task ID: {{ id }}</p>
-    <a href="{% url 'home' %}">Go Back to Home</a>
+    {{people}}
+    <table style="border: 1px solid black">
+      {% for person in people %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td>{{ person.city }}</td>
+      </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>
